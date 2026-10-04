@@ -1,0 +1,13 @@
+services:
+  kasir:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:8080"          # ganti ke "127.0.0.1:8080:8080" jika memakai Caddy/Nginx di server yang sama
+    environment:
+      KASIR_TZ: "7"          # 7 = WIB, 8 = WITA, 9 = WIT
+      # KASIR_ADMIN_PASSWORD: "ganti-ini"   # password awal admin (hanya saat database pertama dibuat)
+    volumes:
+      - kasir-data:/data
+volumes:
+  kasir-data:
