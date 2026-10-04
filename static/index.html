@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14213d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kasir Smart">
+<title>Kasir Smart</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<section id="login" hidden>
+  <form class="login-card" id="loginForm" autocomplete="on">
+    <div class="logo">K</div>
+    <h1>Kasir Smart</h1>
+    <p class="tag">Masuk untuk mulai berjualan</p>
+    <div class="field"><label for="lu">Username</label><input id="lu" name="username" autocomplete="username" autocapitalize="none" required></div>
+    <div class="field"><label for="lp">Password</label><input id="lp" name="password" type="password" autocomplete="current-password" required></div>
+    <div class="err" id="lerr" role="alert"></div>
+    <button class="btn pri big" type="submit">Masuk</button>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header class="top">
+    <span class="brand" id="brand">Kasir Smart</span>
+    <button class="pill q" id="qbadge" data-act="queue" hidden></button>
+    <span class="pill" id="netpill"><i></i><span>Online</span></span>
+  </header>
+  <nav class="nav" id="nav" aria-label="Menu utama"></nav>
+  <main id="view"></main>
+</div>
+
+<div id="modal" hidden></div>
+<div id="toast" aria-live="polite"></div>
+<div id="printArea"></div>
+<style id="pageStyle"></style>
+<script src="/app.js"></script>
+</body>
+</html>
