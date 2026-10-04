@@ -1,0 +1,6 @@
+# HTTPS otomatis (Let's Encrypt). Ganti kasir.domainanda.com dengan domain Anda
+# yang A-record-nya sudah mengarah ke IP server.
+kasir.domainanda.com {
+    encode gzip
+    reverse_proxy 127.0.0.1:8080
+}

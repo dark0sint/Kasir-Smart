@@ -1,0 +1,23 @@
+# Salin ke /etc/systemd/system/kasir-smart.service
+# lalu: sudo systemctl daemon-reload && sudo systemctl enable --now kasir-smart
+[Unit]
+Description=Kasir Smart (POS UMKM)
+After=network.target
+
+[Service]
+Type=simple
+User=kasir
+WorkingDirectory=/opt/kasir-smart
+Environment=KASIR_HOST=127.0.0.1
+Environment=KASIR_PORT=8080
+Environment=KASIR_DB=/opt/kasir-smart/data/kasir.db
+Environment=KASIR_TZ=7
+ExecStart=/usr/bin/python3 /opt/kasir-smart/server.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/opt/kasir-smart/data
+
+[Install]
+WantedBy=multi-user.target
